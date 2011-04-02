@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<!-- struts.xml文件必须放在“src/main/resources”目录下 -->
+<struts>
+	<!-- 配置i18n全局配置文件的文件名 ：global.properties-->
+	<constant name="struts.custom.i18n.resources" value="global" />
+	
+	<!-- 配置开发模式：产品环境下必须修改为false -->
+	<constant name="struts.devMode" value="true" />
+
+	<!-- 配置Struts2的Spring插件： http://struts.apache.org/2.x/docs/spring-plugin.html -->
+	<constant name="struts.objectFactory"
+		value="org.apache.struts2.spring.StrutsSpringObjectFactory" />
+
+	<!-- 配置default包 -->
+	<package name="default" extends="struts-default" namespace="/">
+		<action name="example" class="example">
+			<result>/example/success.jsp</result>
+			<result name="open">/example/struts2/Form.jsp</result>
+			<result name="edit">/example/struts2/Form.jsp</result>
+			<result name="display">/example/struts2/Display.jsp</result>
+			<result name="view">/example/struts2/View.jsp</result>
+			<result name="save">/example/struts2/Msg.jsp</result>
+			<result name="delete">/example/struts2/Msg.jsp</result>
+		</action>
+	</package>
+
+	<!--More includes... <include file="/com/dragon/struts-others.xml"/> -->
+</struts>
